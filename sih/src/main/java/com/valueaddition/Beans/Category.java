@@ -4,7 +4,8 @@ import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+
+import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 
 @Entity
@@ -14,8 +15,8 @@ public class Category {
 	@PrimaryKeyJoinColumn
 	private int categoryId;
 	
-//	@ManyToOne(targetEntity = Item.class)
-//	private Set<Item> items;
+	@OneToMany(targetEntity = Item.class)
+	private Set<Item> items;
 	
 	private String categoryName;
 	private int noOfItems;

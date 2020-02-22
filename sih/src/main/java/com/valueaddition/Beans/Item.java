@@ -16,23 +16,23 @@ public class Item {
 	@PrimaryKeyJoinColumn
 	private int itemId;
 	
-//	@OneToMany(targetEntity = Category.class)
-//	private Category category;
-//	
-//	@ManyToOne
-//	private Set<Post> posts ;
+	@ManyToOne(targetEntity = Category.class)
+	private Category category;
+	
+	@OneToMany
+	private Set<Post> posts ;
 	
 	
 	private String itemName;
 	private int noOfPosts;
 	
 	
-//	public Category getCategory() {
-//		return category;
-//	}
-//	public void setCategory(Category category) {
-//		this.category = category;
-//	}
+	public Category getCategory() {
+		return category;
+	}
+	public void setCategory(Category category) {
+		this.category = category;
+	}
 	public int getItemId() {
 		return itemId;
 	}
